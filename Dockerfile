@@ -1,4 +1,4 @@
-# This will build the handson-conamegen image
+# This will build the handson-namer image
 FROM ubuntu:12.10
 MAINTAINER Brian Morearty, brian@morearty.org
 
@@ -12,8 +12,8 @@ RUN gem install bundler sinatra --no-ri --no-rdoc
 EXPOSE 9292
 
 # Copy the app into the container
-ADD conamegen /opt/conamegen
-WORKDIR /opt/conamegen
+ADD namer /opt/namer
+WORKDIR /opt/namer
 RUN bundle install
 
 CMD ["rackup"]
